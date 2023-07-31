@@ -47,3 +47,5 @@ PS C:\Windows\system32> `Set-ExecutionPolicy Unrestricted -Scope CurrentUser`
 16. На всякий случай установим препроцессоры SCSS и SASS
     `npm i scss-react`
     `npm i -D sass`
+
+<!-- 17. `npm i @emotion/is-prop-valid` -->
