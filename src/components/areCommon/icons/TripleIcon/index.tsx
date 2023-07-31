@@ -1,11 +1,17 @@
 import React, { FC, useState } from "react";
-import { StyledTripleIcon } from "./styles";
+import styled from "styled-components";
 
 interface TripleIconProps {
   icon: string;
   light: boolean;
   hovered: boolean;
 }
+
+export const StyledTripleIcon = styled.img`
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+`;
 
 const TripleIcon: FC<TripleIconProps> = ({ icon, light, hovered }) => {
   const [isLocalHovered, setIsLocalHovered] = useState(false);

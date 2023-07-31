@@ -31,6 +31,19 @@ export const LeftBlock = styled.div`
   align-items: center;
 `;
 
+export const HamburgerContainer = styled.div`
+  cursor: pointer;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+
+  @media (min-width: 1160px) {
+    display: none;
+    // display: block;
+  }
+`;
+
 export const RigthBlock = styled.div`
   display: flex;
   justify-content: space-between;
@@ -41,6 +54,49 @@ export const Contacts = styled.div`
 
   @media (min-width: 768px) {
     display: block;
+  }
+`;
+
+export const ContactsContainer = styled.div`
+  min-width: 124px;
+  margin-right: 32px;
+  position: relative;
+
+  @media (min-width: 1200px) {
+    margin-right: 64px;
+  }
+`;
+
+export const ContactsPhone = styled.a<{ isBackgroundWhite: boolean }>`
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 24px;
+  margin-left: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8;")};
+
+  &:hover {
+    color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
+  }
+`;
+
+export const AdminLogin = styled.button<{ isBackgroundWhite: boolean }>`
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  font-size: 11px;
+
+  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8;")};
+
+  &:hover {
+    color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
   }
 `;
 
