@@ -18,14 +18,14 @@ exports.Contacts = styled_components_1["default"].div(templateObject_6 || (templ
 exports.ContactsContainer = styled_components_1["default"].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  min-width: 124px;\n  margin-right: 32px;\n  position: relative;\n\n  @media (min-width: 1200px) {\n    margin-right: 64px;\n  }\n"], ["\n  min-width: 124px;\n  margin-right: 32px;\n  position: relative;\n\n  @media (min-width: 1200px) {\n    margin-right: 64px;\n  }\n"])));
 exports.ContactsPhone = styled_components_1["default"].a(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  text-decoration: none;\n  outline: none;\n  cursor: pointer;\n  font-size: 14px;\n  line-height: 24px;\n  margin-left: 20px;\n\n  @media (min-width: 768px) {\n    font-size: 16px;\n  }\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"], ["\n  text-decoration: none;\n  outline: none;\n  cursor: pointer;\n  font-size: 14px;\n  line-height: 24px;\n  margin-left: 20px;\n\n  @media (min-width: 768px) {\n    font-size: 16px;\n  }\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"])), function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
-    return (isBackgroundWhite ? "#78828c" : "#b5bdc8;");
+    return (isBackgroundWhite ? "#78828c" : "#b5bdc8");
 }, function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
     return (isBackgroundWhite ? "#000000" : "#ffffff");
 });
 exports.AdminLogin = styled_components_1["default"].button(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  cursor: pointer;\n  position: absolute;\n  top: 24px;\n  left: 20px;\n  font-size: 11px;\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"], ["\n  cursor: pointer;\n  position: absolute;\n  top: 24px;\n  left: 20px;\n  font-size: 11px;\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"])), function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
-    return (isBackgroundWhite ? "#78828c" : "#b5bdc8;");
+    return (isBackgroundWhite ? "#78828c" : "#b5bdc8");
 }, function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
     return (isBackgroundWhite ? "#000000" : "#ffffff");
@@ -33,7 +33,7 @@ exports.AdminLogin = styled_components_1["default"].button(templateObject_9 || (
 exports.PrivateOffice = styled_components_1["default"].div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  &:hover .top-menu_title {\n    color: #b5bdc8;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  position: relative;\n\n  &:hover .top-menu_title {\n    color: #b5bdc8;\n  }\n"])));
 exports.PersonalArea = styled_components_1["default"].p(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  margin-left: 12px;\n  font-size: 16px;\n  line-height: 24px;\n  cursor: pointer;\n  display: none;\n\n  @media (min-width: 768px) {\n    display: block;\n  }\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"], ["\n  margin-left: 12px;\n  font-size: 16px;\n  line-height: 24px;\n  cursor: pointer;\n  display: none;\n\n  @media (min-width: 768px) {\n    display: block;\n  }\n\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"])), function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
-    return (isBackgroundWhite ? "#78828c" : "#b5bdc8;");
+    return (isBackgroundWhite ? "#78828c" : "#b5bdc8");
 }, function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
     return (isBackgroundWhite ? "#000000" : "#ffffff");

@@ -79,7 +79,7 @@ export const ContactsPhone = styled.a<{ isBackgroundWhite: boolean }>`
     font-size: 16px;
   }
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8;")};
+  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
     color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
@@ -93,7 +93,7 @@ export const AdminLogin = styled.button<{ isBackgroundWhite: boolean }>`
   left: 20px;
   font-size: 11px;
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8;")};
+  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
     color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
@@ -122,7 +122,7 @@ export const PersonalArea = styled.p<{ isBackgroundWhite: boolean }>`
     display: block;
   }
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8;")};
+  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
     color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};

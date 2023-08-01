@@ -12,7 +12,7 @@ var styles_1 = require("./styles");
 var TripleIcon_1 = require("../../areCommon/icons/TripleIcon");
 var Logotypes_1 = require("../../areCommon/Logotypes/Logotypes");
 var react_router_dom_1 = require("react-router-dom");
-var MenuLink_1 = require("../../ui/links/MenuLink/MenuLink");
+var MenuLink_1 = require("../../ui/links/MenuLink");
 exports.Nav = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: none;\n\n  @media (min-width: 1160px) {\n    display: flex;\n    justify-content: space-between;\n    margin-left: 12px;\n  }\n"], ["\n  display: none;\n\n  @media (min-width: 1160px) {\n    display: flex;\n    justify-content: space-between;\n    margin-left: 12px;\n  }\n"])));
 var TopMenu = function () {
     var _a = react_1.useState(true), isBackgroundWhite = _a[0], setBackgroundWhite = _a[1];

@@ -1,7 +1,14 @@
-// import { DefaultTheme } from "styled-components";
-import { ITheme } from "../interfaces/typeTheme";
+import { ITypography } from "../interfaces/typesTypography";
 
-export const baseTheme: ITheme = {
+/* Typography */
+export const typography: ITypography = {
+  textСolor: {
+    white: "#ffffff",
+    whiteDark: "#b5bdc8",
+    black: "#000000",
+    gray1: "#78828c",
+  },
+
   colors: {
     primary: "#7986cb",
     primaryDark: "#5c6bc0",
@@ -32,24 +39,5 @@ export const baseTheme: ITheme = {
     large: "(min-width: 960px)",
     medium: "(min-width: 768px)",
     small: "(min-width: 576px)",
-  },
-
-  // in px
-  sizes: {
-    header: { height: 56 },
-    container: { width: 1200 },
-    footer: { height: 128 },
-    modal: { width: 540 },
-  },
-
-  // in ms
-  durations: {
-    ms300: 300,
-  },
-
-  // z-index
-  order: {
-    header: 50,
-    modal: 100,
   },
 };

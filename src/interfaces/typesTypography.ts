@@ -1,11 +1,13 @@
 import FlattenSimpleInterpolation from "styled-components";
 
-export enum ThemeEnum {
-  light = "light",
-  dark = "dark",
-}
+export interface ITypography {
+  textСolor: {
+    white: string;
+    whiteDark: string;
+    black: string;
+    gray1: string;
+  };
 
-export interface ITheme {
   colors: {
     primary: string;
     primaryDark: string;
@@ -35,22 +37,6 @@ export interface ITheme {
     large: string;
     medium: string;
     small: string;
-  };
-
-  sizes: {
-    header: { height: number };
-    container: { width: number };
-    footer: { height: number };
-    modal: { width: number };
-  };
-
-  durations: {
-    ms300: number;
-  };
-
-  order: {
-    header: number;
-    modal: number;
   };
 }
 

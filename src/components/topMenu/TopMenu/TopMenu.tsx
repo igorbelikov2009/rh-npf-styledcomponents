@@ -18,7 +18,7 @@ import TripleIcon from "../../areCommon/icons/TripleIcon";
 import Logotypes from "../../areCommon/Logotypes/Logotypes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MenuLinkProps } from "../../../interfaces/types";
-import MenuLink from "../../ui/links/MenuLink/MenuLink";
+import MenuLink from "../../ui/links/MenuLink";
 
 export const Nav = styled.div`
   display: none;

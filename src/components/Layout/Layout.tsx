@@ -2,7 +2,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import TopMenu from "../topMenu/TopMenu/TopMenu";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer";
 import styled from "styled-components";
 
 const StyledLayout = styled.main`
@@ -19,8 +19,8 @@ const Layout = () => {
         <Outlet />
       </StyledLayout> */}
 
-      <TopMenu />
-      {/* <Footer /> */}
+      {/* <TopMenu /> */}
+      <Footer />
     </>
   );
 };
