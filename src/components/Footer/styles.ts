@@ -14,7 +14,7 @@ export const StyledFooter = styled.div`
   }
 `;
 
-export const TopBlock = styled.div`
+export const TopBlockFooter = styled.div`
   width: 100%;
 
   @media (min-width: 576px) {

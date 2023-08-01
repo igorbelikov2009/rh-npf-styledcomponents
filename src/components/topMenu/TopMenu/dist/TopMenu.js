@@ -29,6 +29,23 @@ var TopMenu = function () {
         { to: "/support", children: "Поддержка" },
         { to: "/contacts", children: "Контакты" },
     ];
+    react_1.useEffect(function () {
+        if (pathname === "/" ||
+            pathname === "/about" ||
+            pathname === "/business" ||
+            pathname === "/info" ||
+            pathname === "/investment" ||
+            pathname === "/managment" ||
+            pathname === "/news" ||
+            pathname === "/notfoundpage" ||
+            pathname === "/support" ||
+            pathname === "/taxation") {
+            setBackgroundWhite(false);
+        }
+        else {
+            setBackgroundWhite(true);
+        }
+    }, [pathname, setBackgroundWhite]);
     var openLoginForm = function () {
         console.log("LoginForm");
     };

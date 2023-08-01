@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { firstBlock, secondBlock, thirdBlock } from "../../data/footerData";
 import Logotypes from "../areCommon/Logotypes/Logotypes";
-import FooterLink from "../ui/links/FooterLink/FooterLink";
+import FooterLink from "../ui/links/FooterLink";
 import {
   AdminLink,
   AdminParagraph,
@@ -18,7 +18,7 @@ import {
   PhoneContainer,
   PhoneNumber,
   StyledFooter,
-  TopBlock,
+  TopBlockFooter,
 } from "./styles";
 
 const Footer: FC = () => {
@@ -34,7 +34,7 @@ const Footer: FC = () => {
 
   return (
     <StyledFooter>
-      <TopBlock>
+      <TopBlockFooter>
         <LogotypeContainer onClick={() => navigate("/", { replace: true })}>
           <Logotypes isBackgroundWhite />
         </LogotypeContainer>
@@ -44,7 +44,7 @@ const Footer: FC = () => {
           <IconLogo src="/icons/logoAeb.svg" alt="logo" />
           <IconLogo src="/icons/logoExpert.svg" alt="logo" />
         </LogosContainer>
-      </TopBlock>
+      </TopBlockFooter>
 
       <PhoneContainer>
         <PhoneNumber>8 800 200-47-66</PhoneNumber>

@@ -15,11 +15,11 @@ const StyledLayout = styled.main`
 const Layout = () => {
   return (
     <>
-      {/* <StyledLayout>
+      <StyledLayout>
         <Outlet />
-      </StyledLayout> */}
+      </StyledLayout>
 
-      {/* <TopMenu /> */}
+      <TopMenu />
       <Footer />
     </>
   );

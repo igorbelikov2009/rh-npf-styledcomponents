@@ -5,7 +5,7 @@ var react_1 = require("react");
 var react_router_dom_1 = require("react-router-dom");
 var footerData_1 = require("../../data/footerData");
 var Logotypes_1 = require("../areCommon/Logotypes/Logotypes");
-var FooterLink_1 = require("../ui/links/FooterLink/FooterLink");
+var FooterLink_1 = require("../ui/links/FooterLink");
 var styles_1 = require("./styles");
 var Footer = function () {
     var _a = react_1.useState(false), isAuth = _a[0], setAuth = _a[1];
@@ -19,7 +19,7 @@ var Footer = function () {
         }
     };
     return (react_1["default"].createElement(styles_1.StyledFooter, null,
-        react_1["default"].createElement(styles_1.TopBlock, null,
+        react_1["default"].createElement(styles_1.TopBlockFooter, null,
             react_1["default"].createElement(styles_1.LogotypeContainer, { onClick: function () { return navigate("/", { replace: true }); } },
                 react_1["default"].createElement(Logotypes_1["default"], { isBackgroundWhite: true })),
             react_1["default"].createElement(styles_1.LogosContainer, null,

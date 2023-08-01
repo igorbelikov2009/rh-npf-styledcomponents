@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   Header,
@@ -48,6 +48,25 @@ const TopMenu: FC = () => {
     { to: "/support", children: "Поддержка" },
     { to: "/contacts", children: "Контакты" },
   ];
+
+  useEffect(() => {
+    if (
+      pathname === "/" ||
+      pathname === "/about" ||
+      pathname === "/business" ||
+      pathname === "/info" ||
+      pathname === "/investment" ||
+      pathname === "/managment" ||
+      pathname === "/news" ||
+      pathname === "/notfoundpage" ||
+      pathname === "/support" ||
+      pathname === "/taxation"
+    ) {
+      setBackgroundWhite(false);
+    } else {
+      setBackgroundWhite(true);
+    }
+  }, [pathname, setBackgroundWhite]);
 
   const openLoginForm = () => {
     console.log("LoginForm");
