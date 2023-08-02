@@ -1,0 +1,12 @@
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+exports.__esModule = true;
+exports.StyledCards = exports.CardsHeading = exports.CardsContainer = void 0;
+var styled_components_1 = require("styled-components");
+exports.CardsContainer = styled_components_1["default"].section(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 960px;\n  margin: 0 auto;\n  border-color: #ffffff;\n  padding-top: 24px;\n  padding-left: 0;\n  padding-right: 0;\n  padding-bottom: 48px; //\n\n  @media screen and (min-width: 576px) {\n    padding-left: 28px;\n    padding-right: 28px;\n  }\n\n  @media screen and (min-width: 768px) {\n    padding-top: 72px;\n    padding-bottom: 96px;\n  }\n\n  @media screen and (min-width: 1024px) {\n    padding-left: 0;\n    padding-right: 0;\n  }\n"], ["\n  width: 100%;\n  max-width: 960px;\n  margin: 0 auto;\n  border-color: #ffffff;\n  padding-top: 24px;\n  padding-left: 0;\n  padding-right: 0;\n  padding-bottom: 48px; //\n\n  @media screen and (min-width: 576px) {\n    padding-left: 28px;\n    padding-right: 28px;\n  }\n\n  @media screen and (min-width: 768px) {\n    padding-top: 72px;\n    padding-bottom: 96px;\n  }\n\n  @media screen and (min-width: 1024px) {\n    padding-left: 0;\n    padding-right: 0;\n  }\n"])));
+exports.CardsHeading = styled_components_1["default"].h2(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  font-size: 18px;\n  color: #28323c;\n  padding: 0 24px;\n  margin-bottom: 24px;\n  font-weight: 500;\n\n  @media screen and (min-width: 576px) {\n    padding: 0;\n    margin-bottom: 48px;\n  }\n"], ["\n  font-size: 18px;\n  color: #28323c;\n  padding: 0 24px;\n  margin-bottom: 24px;\n  font-weight: 500;\n\n  @media screen and (min-width: 576px) {\n    padding: 0;\n    margin-bottom: 48px;\n  }\n"])));
+exports.StyledCards = styled_components_1["default"].div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  border-left: none;\n\n  @media screen and (min-width: 576px) {\n    border-left: 1px solid #e4e4e4;\n  }\n"], ["\n  width: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  border-left: none;\n\n  @media screen and (min-width: 576px) {\n    border-left: 1px solid #e4e4e4;\n  }\n"])));
+var templateObject_1, templateObject_2, templateObject_3;

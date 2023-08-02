@@ -2,6 +2,9 @@ import React from "react";
 import mainImage from "../../assets/images/main/mainTop.jpg";
 import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
 import Info from "../../components/mainPage/Info";
+import Cards from "../../components/areCommon/cards/Cards/Cards";
+import { cardsMainPage } from "../../data/mainPageData";
+import ImagesCalculator from "../../components/mainPage/ImagesCalculator";
 
 const MainPage = () => {
   return (
@@ -15,6 +18,9 @@ const MainPage = () => {
       />
 
       <Info />
+      <Cards cards={cardsMainPage} />
+
+      <ImagesCalculator />
     </>
   );
 };
