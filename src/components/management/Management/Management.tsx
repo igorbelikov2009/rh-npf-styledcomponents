@@ -9,7 +9,7 @@ import GeneralMeetingOfShareholders from "../GeneralMeetingOfShareholders";
 import { ISidebarLink } from "../../../interfaces/types";
 import { BarContainer, BarIcon, BarPosition, Container, Content, Department, StyledManagement } from "./styles";
 import DarkIcon from "../../areCommon/icons/DarkIcon";
-import SidebarLink from "../../ui/links/SidebarLink/SidebarLink";
+import SidebarLink from "../../ui/links/SidebarLink";
 
 const Management = () => {
   const block1 = useRef<HTMLDivElement>(null);
