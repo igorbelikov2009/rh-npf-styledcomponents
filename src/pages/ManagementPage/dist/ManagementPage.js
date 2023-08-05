@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var TopBlock_1 = require("../../components/areCommon/TopBlock/TopBlock");
+var TopBlock_1 = require("../../components/areCommon/TopBlock");
 var managementTop_jpg_1 = require("../../assets/images/management/managementTop.jpg");
 var Management_1 = require("../../components/management/Management/Management");
 var ManagementPage = function () {

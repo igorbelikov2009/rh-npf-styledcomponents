@@ -8,7 +8,7 @@ export interface IRoute {
 export interface MenuLinkProps {
   children: React.ReactNode;
   to: string;
-  isBackgroundWhite?: boolean;
+  backgroundwhite?: boolean;
 }
 
 export interface FooterLinkProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import taxationImage from "../../assets/images/taxation/taxationTop.jpg";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 
 const TaxationPage = () => {
   return (

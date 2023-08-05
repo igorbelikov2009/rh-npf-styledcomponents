@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Header = styled.header<{ isBackgroundWhite: boolean }>`
+export const Header = styled.header<{ backgroundwhite: boolean }>`
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
   height: 72px;
   position: absolute;
   top: 0;
-  border-bottom: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "1px solid #e4e4e4" : "none")};
+  border-bottom: ${({ backgroundwhite }) => (backgroundwhite ? "1px solid #e4e4e4" : "none")};
 `;
 
 export const Container = styled.div`
@@ -67,7 +67,7 @@ export const ContactsContainer = styled.div`
   }
 `;
 
-export const ContactsPhone = styled.a<{ isBackgroundWhite: boolean }>`
+export const ContactsPhone = styled.a<{ backgroundwhite: boolean }>`
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -79,24 +79,24 @@ export const ContactsPhone = styled.a<{ isBackgroundWhite: boolean }>`
     font-size: 16px;
   }
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
+  color: ${({ backgroundwhite }) => (backgroundwhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
-    color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
+    color: ${({ backgroundwhite }) => (backgroundwhite ? "#000000" : "#ffffff")};
   }
 `;
 
-export const AdminLogin = styled.button<{ isBackgroundWhite: boolean }>`
+export const AdminLogin = styled.button<{ backgroundwhite: boolean }>`
   cursor: pointer;
   position: absolute;
   top: 24px;
   left: 20px;
   font-size: 11px;
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
+  color: ${({ backgroundwhite }) => (backgroundwhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
-    color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
+    color: ${({ backgroundwhite }) => (backgroundwhite ? "#000000" : "#ffffff")};
   }
 `;
 
@@ -111,7 +111,7 @@ export const PrivateOffice = styled.div`
   }
 `;
 
-export const PersonalArea = styled.p<{ isBackgroundWhite: boolean }>`
+export const PersonalArea = styled.p<{ backgroundwhite: boolean }>`
   margin-left: 12px;
   font-size: 16px;
   line-height: 24px;
@@ -122,9 +122,9 @@ export const PersonalArea = styled.p<{ isBackgroundWhite: boolean }>`
     display: block;
   }
 
-  color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#78828c" : "#b5bdc8")};
+  color: ${({ backgroundwhite }) => (backgroundwhite ? "#78828c" : "#b5bdc8")};
 
   &:hover {
-    color: ${({ isBackgroundWhite }) => (isBackgroundWhite ? "#000000" : "#ffffff")};
+    color: ${({ backgroundwhite }) => (backgroundwhite ? "#000000" : "#ffffff")};
   }
 `;

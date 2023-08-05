@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var TopBlock_1 = require("../../components/areCommon/TopBlock/TopBlock");
+var TopBlock_1 = require("../../components/areCommon/TopBlock");
 var businnesTop_jpg_1 = require("../../assets/images/businnes/businnesTop.jpg");
 var BusinessPage = function () {
     return (react_1["default"].createElement(react_1["default"].Fragment, null,

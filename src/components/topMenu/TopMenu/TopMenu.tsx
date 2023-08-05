@@ -15,7 +15,7 @@ import {
   HamburgerContainer,
 } from "./styles";
 import TripleIcon from "../../areCommon/icons/TripleIcon";
-import Logotypes from "../../areCommon/Logotypes/Logotypes";
+import Logotypes from "../../areCommon/Logotypes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MenuLinkProps } from "../../../interfaces/types";
 import MenuLink from "../../ui/links/MenuLink";
@@ -31,7 +31,7 @@ export const Nav = styled.div`
 `;
 
 const TopMenu: FC = () => {
-  const [isBackgroundWhite, setBackgroundWhite] = useState(true);
+  const [backgroundwhite, setBackgroundWhite] = useState(true);
 
   const [isPrivateOfficeHovered, setPrivateOfficeHovered] = useState(false);
   const [isHamburgerHovered, setHamburgerHovered] = useState(false);
@@ -81,7 +81,7 @@ const TopMenu: FC = () => {
   };
 
   return (
-    <Header isBackgroundWhite={isBackgroundWhite}>
+    <Header backgroundwhite={backgroundwhite}>
       <Container>
         <LeftBlock>
           <HamburgerContainer
@@ -89,16 +89,16 @@ const TopMenu: FC = () => {
             onMouseOut={() => setHamburgerHovered(false)}
             onClick={openMenuMobil}
           >
-            <TripleIcon icon="Hamburger" light={!isBackgroundWhite} hovered={isHamburgerHovered} />
+            <TripleIcon icon="Hamburger" light={!backgroundwhite} hovered={isHamburgerHovered} />
           </HamburgerContainer>
 
           <div onClick={() => navigate("/", { replace: true })}>
-            <Logotypes isBackgroundWhite={isBackgroundWhite} />
+            <Logotypes backgroundwhite={backgroundwhite} />
           </div>
 
           <Nav>
             {TopMenuLinks.map((link) => (
-              <MenuLink key={link.to} to={link.to} isBackgroundWhite={isBackgroundWhite}>
+              <MenuLink key={link.to} to={link.to} backgroundwhite={backgroundwhite}>
                 {link.children}
               </MenuLink>
             ))}
@@ -108,11 +108,11 @@ const TopMenu: FC = () => {
         <RigthBlock>
           <Contacts>
             <ContactsContainer>
-              <ContactsPhone isBackgroundWhite={isBackgroundWhite} href="tel:+78002004766">
+              <ContactsPhone backgroundwhite={backgroundwhite} href="tel:+78002004766">
                 8 800 200-47-66
               </ContactsPhone>
 
-              <AdminLogin onClick={openAdminLogin} isBackgroundWhite={isBackgroundWhite}>
+              <AdminLogin onClick={openAdminLogin} backgroundwhite={backgroundwhite}>
                 администратор
               </AdminLogin>
             </ContactsContainer>
@@ -123,9 +123,9 @@ const TopMenu: FC = () => {
             onMouseOut={() => setPrivateOfficeHovered(false)}
             onClick={openLoginForm}
           >
-            <TripleIcon icon="User" light={!isBackgroundWhite} hovered={isPrivateOfficeHovered} />
+            <TripleIcon icon="User" light={!backgroundwhite} hovered={isPrivateOfficeHovered} />
 
-            <PersonalArea isBackgroundWhite={isBackgroundWhite}>Личный кабинет</PersonalArea>
+            <PersonalArea backgroundwhite={backgroundwhite}>Личный кабинет</PersonalArea>
           </PrivateOffice>
         </RigthBlock>
       </Container>

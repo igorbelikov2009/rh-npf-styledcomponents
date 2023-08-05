@@ -1,5 +1,5 @@
 import React from "react";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 import businessImage from "../../assets/images/businnes/businnesTop.jpg";
 
 const BusinessPage = () => {

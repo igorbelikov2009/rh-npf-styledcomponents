@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ICard } from "../../../../interfaces/types";
-import CardItem from "../CardItem/CardItem";
+import CardItem from "../CardItem";
 import { CardsContainer, CardsHeading, StyledCards } from "./styles";
 
 interface CardProps {

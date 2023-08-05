@@ -1,6 +1,6 @@
 import React from "react";
 import supportImage from "../../assets/images/support/supportTop.jpg";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 
 const ServiceSupportPage = () => {
   return (

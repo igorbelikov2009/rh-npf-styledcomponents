@@ -3,7 +3,7 @@ import { MenuLinkProps } from "../../../../interfaces/types";
 import { useMatch } from "react-router-dom";
 import { LinkDark, LinkDarkActive, LinkLight, LinkLightActive } from "./styles";
 
-const MenuLink: FC<MenuLinkProps> = ({ children, to, isBackgroundWhite, ...props }) => {
+const MenuLink: FC<MenuLinkProps> = ({ children, to, backgroundwhite, ...props }) => {
   // параметром useMatch будет объект настройки
   const match = useMatch({
     path: to,
@@ -14,7 +14,7 @@ const MenuLink: FC<MenuLinkProps> = ({ children, to, isBackgroundWhite, ...props
   });
   // console.log(match);
 
-  if (isBackgroundWhite) {
+  if (backgroundwhite) {
     if (match) {
       return <LinkDarkActive to={to}> {children} </LinkDarkActive>;
     } else {

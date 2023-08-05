@@ -2,7 +2,7 @@
 import React, { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { firstBlock, secondBlock, thirdBlock } from "../../data/footerData";
-import Logotypes from "../areCommon/Logotypes/Logotypes";
+import Logotypes from "../areCommon/Logotypes";
 import FooterLink from "../ui/links/FooterLink";
 import {
   AdminLink,
@@ -36,7 +36,7 @@ const Footer: FC = () => {
     <StyledFooter>
       <TopBlockFooter>
         <LogotypeContainer onClick={() => navigate("/", { replace: true })}>
-          <Logotypes isBackgroundWhite />
+          <Logotypes backgroundwhite />
         </LogotypeContainer>
 
         <LogosContainer>

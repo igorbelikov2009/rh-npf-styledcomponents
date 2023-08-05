@@ -2,9 +2,9 @@
 exports.__esModule = true;
 var react_1 = require("react");
 var mainTop_jpg_1 = require("../../assets/images/main/mainTop.jpg");
-var TopBlock_1 = require("../../components/areCommon/TopBlock/TopBlock");
+var TopBlock_1 = require("../../components/areCommon/TopBlock");
 var Info_1 = require("../../components/mainPage/Info");
-var Cards_1 = require("../../components/areCommon/cards/Cards/Cards");
+var Cards_1 = require("../../components/areCommon/cards/Cards");
 var mainPageData_1 = require("../../data/mainPageData");
 var ImagesCalculator_1 = require("../../components/mainPage/ImagesCalculator");
 var MainPage = function () {

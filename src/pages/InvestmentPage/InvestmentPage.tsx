@@ -1,6 +1,6 @@
 import React from "react";
 import investImage from "../../assets/images/invest/InvestTop.jpg";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 
 const InvestmentPage = () => {
   return (

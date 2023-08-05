@@ -1,8 +1,8 @@
 import React from "react";
 import mainImage from "../../assets/images/main/mainTop.jpg";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 import Info from "../../components/mainPage/Info";
-import Cards from "../../components/areCommon/cards/Cards/Cards";
+import Cards from "../../components/areCommon/cards/Cards";
 import { cardsMainPage } from "../../data/mainPageData";
 import ImagesCalculator from "../../components/mainPage/ImagesCalculator";
 

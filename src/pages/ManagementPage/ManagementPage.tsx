@@ -1,5 +1,5 @@
 import React from "react";
-import TopBlock from "../../components/areCommon/TopBlock/TopBlock";
+import TopBlock from "../../components/areCommon/TopBlock";
 import managementImage from "../../assets/images/management/managementTop.jpg";
 import Management from "../../components/management/Management/Management";
 

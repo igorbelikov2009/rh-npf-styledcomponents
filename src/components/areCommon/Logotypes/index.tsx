@@ -6,18 +6,18 @@ import logoWhiteSmall from "../../../assets/logotype/logoWhiteSmall.svg";
 import { Container, LogotypeLarge, LogotypeSmall } from "./styles";
 
 interface LogotypesProps {
-  isBackgroundWhite?: boolean;
+  backgroundwhite?: boolean;
 }
 
-const Logotypes: FC<LogotypesProps> = ({ isBackgroundWhite }) => {
+const Logotypes: FC<LogotypesProps> = ({ backgroundwhite }) => {
   return (
     <Container href="#">
       <LogotypeLarge>
-        <img src={isBackgroundWhite ? logoColored : logoWhite} alt="logotype" />
+        <img src={backgroundwhite ? logoColored : logoWhite} alt="logotype" />
       </LogotypeLarge>
 
       <LogotypeSmall>
-        <img src={isBackgroundWhite ? logoColoredSmall : logoWhiteSmall} alt="logotype" />
+        <img src={backgroundwhite ? logoColoredSmall : logoWhiteSmall} alt="logotype" />
       </LogotypeSmall>
     </Container>
   );
