@@ -4,32 +4,14 @@ import investImage from "../../assets/images/invest/InvestTop.jpg";
 import TopBlock from "../../components/areCommon/TopBlock";
 import PortfolioStructure from "../../components/investment/portfolioStructure/PortfolioStructure";
 import { IOptionItem } from "../../interfaces/types";
-import { investmentOptions } from "../../data/investData";
+import { investmentCards, investmentOptions } from "../../data/investData";
 import useDate from "../../api/useDate/useDate";
-import { styled } from "styled-components";
 import OptionsBlock from "../../components/ui/select/OptionsBlock";
-
-export const ContainerOptionBlock = styled.div<{ firstvisible: boolean }>`
-  max-width: 382px;
-  border-radius: 6px;
-  position: fixed;
-  margin: 0 auto;
-  transition: opacity 0.28s ease;
-  // если сделать transition: all 0.28s ease;,
-  // то этот блок будет дёргаться при скроле
-
-  @media screen and (min-width: 576px) {
-    max-width: 210px;
-  }
-
-  @media screen and (min-width: 768px) {
-    max-width: 210px;
-    margin: 0;
-  }
-
-  visibility: ${({ firstvisible }) => (firstvisible ? "visible" : "hidden")};
-  opacity: ${({ firstvisible }) => (firstvisible ? "1" : "0")};
-`;
+import { ContainerFirstOptionBlock, ContainerSecondOptionBlock } from "./styles";
+import Cards from "../../components/areCommon/cards/Cards";
+import CompositionReserves from "../../components/investment/compositionReserves/CompositionReserves";
+import InvestmentArchive from "../../components/investment/InvestmentArchive";
+import InvestmentDescription from "../../components/investment/InvestmentDescription";
 
 const InvestmentPage = () => {
   const [clientHeight, setClientHeight] = useState(0);
@@ -211,6 +193,8 @@ const InvestmentPage = () => {
         image={investImage}
       />
 
+      {investmentCards && <Cards cards={investmentCards} />}
+
       <div id="portfolioStructure">
         <PortfolioStructure
           isvisible={firstBlockVisible}
@@ -222,7 +206,19 @@ const InvestmentPage = () => {
         />
       </div>
 
-      <ContainerOptionBlock
+      <CompositionReserves
+        isVisible={secondBlockVisible}
+        selectorValue={secondCurrentValue}
+        idOption={secondBlockIdOption}
+        onClickSelector={onClickSecondSelectController}
+        emitCoords={onScrollCompositionReserves}
+        emitSelectorBottomLeft={getSecondSelectorBottomLeft}
+      />
+
+      <InvestmentArchive />
+      <InvestmentDescription />
+
+      <ContainerFirstOptionBlock
         firstvisible={firstBlockVisible}
         ref={refFirstSelectBlock}
         style={{
@@ -237,7 +233,23 @@ const InvestmentPage = () => {
           onClickOptionsBlock={onClickFirstOptionsBlock}
           currentValue={firstCurrentValue}
         />
-      </ContainerOptionBlock>
+      </ContainerFirstOptionBlock>
+
+      <ContainerSecondOptionBlock
+        secondvisible={secondBlockVisible}
+        style={{
+          top: `${secondBlockTop}px`,
+          left: `${secondSelectorLeft + 6}px`,
+          width: `${secondSelectorWidth - 12}px`,
+        }}
+      >
+        <OptionsBlock
+          optionsItems={formattedOptionsItems}
+          emitValue={onChangeSecondOptionsBlock}
+          onClickOptionsBlock={onClickSecondOptionsBlock}
+          currentValue={secondCurrentValue}
+        />
+      </ContainerSecondOptionBlock>
     </>
   );
 };

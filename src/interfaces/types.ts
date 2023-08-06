@@ -180,3 +180,16 @@ export interface IReport {
     subtitle: string;
   }[];
 }
+
+export interface TableProps {
+  headings: string[];
+  arrayRows: string[][];
+}
+
+export interface IParagraph {
+  paragraphs?: string[];
+}
+
+export interface IParagraphBefore {
+  paragraphs: string[];
+}

@@ -6,7 +6,7 @@ import AboutFund from "../pages/AboutFundPage/AboutFundPage";
 import Business from "../pages/BusinessPage/BusinessPage";
 import Contact from "../pages/ContactPage/ContactPage";
 import Info from "../pages/InfoDisclosurePage/InfoDisclosurePage";
-import Investment from "../pages/InvestmentPage/InvestmentPage";
+import Investment from "../pages/InvestmentPage";
 import Management from "../pages/ManagementPage/ManagementPage";
 import News from "../pages/News/News";
 import NewsPage from "../pages/NewsPage/NewsPage";
