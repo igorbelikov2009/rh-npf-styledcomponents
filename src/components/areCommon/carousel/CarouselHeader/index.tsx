@@ -28,16 +28,16 @@ const CarouselHeader: FC<CarouselHeaderProps> = ({
       <TitlesContainer>
         <CarouselTitle> {headerTitle} </CarouselTitle>
         <CarouselSubtitle> {headerSubtitle} </CarouselSubtitle>
-      </TitlesContainer>
 
-      <Arrows
-        isBlurredLeft={isBlurredLeft}
-        isBlurredRight={isBlurredRight}
-        isHoveredLeft={isHoveredLeft}
-        isHoveredRight={isHoveredRight}
-        onClickLeft={onClickLeft}
-        onClickRight={onClickRight}
-      />
+        <Arrows
+          isBlurredLeft={isBlurredLeft}
+          isBlurredRight={isBlurredRight}
+          isHoveredLeft={isHoveredLeft}
+          isHoveredRight={isHoveredRight}
+          onClickLeft={onClickLeft}
+          onClickRight={onClickRight}
+        />
+      </TitlesContainer>
     </StyledCarouselHeader>
   );
 };
