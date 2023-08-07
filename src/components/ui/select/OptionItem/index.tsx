@@ -6,7 +6,7 @@ export interface OptionItemProps {
   date: string;
   value: string;
   id: string;
-  emitValue: (event: React.SetStateAction<string>, id: string) => void;
+  emitValue: (event: string, id: string) => void;
 }
 
 export const StyledOption = styled.label<{ active: boolean }>`

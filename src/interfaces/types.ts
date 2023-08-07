@@ -193,3 +193,31 @@ export interface IParagraph {
 export interface IParagraphBefore {
   paragraphs: string[];
 }
+
+export interface IndicatorsYearProps {
+  isVisible: boolean;
+  heading?: string;
+  subheading?: string;
+  indicatorRows?: IIndicatorRow[];
+  archiveLinks: ArchiveLinkProps[];
+}
+
+export interface SelectorAndOptionBlockProps {
+  isVisible: boolean;
+  optionsItems: IOptionItem[];
+  currentValue: string;
+  onClickSelector: () => void;
+  emitOnChangeRadio: (value: string, id: string) => void;
+  emitOnClickRadio: () => void;
+}
+
+export interface NotificsContentProps {
+  content: INotificsContent;
+  isVisible: boolean;
+}
+
+export interface SpecDepositoryItemProps {
+  subheading: string;
+  title: string;
+  subtitle: string;
+}
