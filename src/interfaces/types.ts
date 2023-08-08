@@ -221,3 +221,12 @@ export interface SpecDepositoryItemProps {
   title: string;
   subtitle: string;
 }
+
+export interface HidingArchiveProps {
+  isVisible: boolean;
+  isArchiveShareholdersVisible: boolean;
+  isArchivePensionVisible: boolean;
+  isArchiveReportingVisible: boolean;
+  isArchiveAssetValueRulesVisible: boolean;
+  onClickHidingArchive: () => void;
+}
