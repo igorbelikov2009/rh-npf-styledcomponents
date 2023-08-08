@@ -5,6 +5,7 @@ import Info from "../../components/mainPage/Info";
 import Cards from "../../components/areCommon/cards/Cards";
 import { cardsMainPage } from "../../data/mainPageData";
 import ImagesCalculator from "../../components/mainPage/ImagesCalculator";
+import Calculator from "../../components/mainPage/calculator/Calculator";
 
 const MainPage = () => {
   return (
@@ -19,6 +20,10 @@ const MainPage = () => {
 
       <Info />
       <Cards cards={cardsMainPage} />
+
+      <div id="calculator">
+        <Calculator />
+      </div>
 
       <ImagesCalculator />
     </>

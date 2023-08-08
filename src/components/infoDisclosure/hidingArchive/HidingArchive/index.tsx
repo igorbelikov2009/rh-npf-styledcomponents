@@ -34,7 +34,7 @@ const HidingArchive: FC<HidingArchiveProps> = ({
           <TopBlock visible={isVisible}>
             <Heading>Архив</Heading>
 
-            <IconContainer>
+            <IconContainer onClick={onClickHidingArchive}>
               <DarkIcon icon="Cross" />
             </IconContainer>
           </TopBlock>
