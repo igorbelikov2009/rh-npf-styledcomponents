@@ -230,3 +230,8 @@ export interface HidingArchiveProps {
   isArchiveAssetValueRulesVisible: boolean;
   onClickHidingArchive: () => void;
 }
+
+export interface LoginFormProps {
+  closeLoginForm: () => void;
+  isVisible: boolean;
+}

@@ -19,6 +19,8 @@ import Logotypes from "../../areCommon/Logotypes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MenuLinkProps } from "../../../interfaces/types";
 import MenuLink from "../../ui/links/MenuLink";
+import MenuMobil from "../MenuMobil";
+import LoginForm from "../LoginForm";
 
 export const Nav = styled.div`
   display: none;
@@ -32,9 +34,13 @@ export const Nav = styled.div`
 
 const TopMenu: FC = () => {
   const [backgroundwhite, setBackgroundWhite] = useState(true);
+  const [isAdminLoginVisible, setAdminLoginVisible] = useState(false);
 
   const [isPrivateOfficeHovered, setPrivateOfficeHovered] = useState(false);
   const [isHamburgerHovered, setHamburgerHovered] = useState(false);
+
+  const [isMenuMobilVisible, setMenuMobilVisible] = useState(false);
+  const [isLoginFormVisible, setLoginFormVisible] = useState(false);
 
   const navigate = useNavigate();
   const pathname = useLocation().pathname;
@@ -69,15 +75,36 @@ const TopMenu: FC = () => {
   }, [pathname, setBackgroundWhite]);
 
   const openLoginForm = () => {
-    console.log("LoginForm");
+    setLoginFormVisible((prev) => !prev);
+    if (isLoginFormVisible) {
+      document.body.style.overflow = "";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+  const closeLoginForm = () => {
+    setLoginFormVisible((prev) => !prev);
+    if (isLoginFormVisible) {
+      document.body.style.overflow = "";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
 
   const openMenuMobil = () => {
-    console.log("openMenuMobil");
+    setMenuMobilVisible(true);
+    document.body.style.overflow = "hidden";
+  };
+  const closeMenuMobil = () => {
+    setMenuMobilVisible(false);
+    document.body.style.overflow = "";
   };
 
   const openAdminLogin = () => {
-    console.log("AdminLogin");
+    setAdminLoginVisible(!isAdminLoginVisible);
+  };
+  const closeAdminLogin = () => {
+    setAdminLoginVisible(false);
   };
 
   return (
@@ -129,6 +156,9 @@ const TopMenu: FC = () => {
           </PrivateOffice>
         </RigthBlock>
       </Container>
+
+      <LoginForm isVisible={isLoginFormVisible} closeLoginForm={closeLoginForm} />
+      <MenuMobil isVisible={isMenuMobilVisible} closeMenuMobil={closeMenuMobil} />
     </Header>
   );
 };

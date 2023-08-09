@@ -13,11 +13,16 @@ var TripleIcon_1 = require("../../areCommon/icons/TripleIcon");
 var Logotypes_1 = require("../../areCommon/Logotypes");
 var react_router_dom_1 = require("react-router-dom");
 var MenuLink_1 = require("../../ui/links/MenuLink");
+var MenuMobil_1 = require("../MenuMobil");
+var LoginForm_1 = require("../LoginForm");
 exports.Nav = styled_components_1["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: none;\n\n  @media (min-width: 1160px) {\n    display: flex;\n    justify-content: space-between;\n    margin-left: 12px;\n  }\n"], ["\n  display: none;\n\n  @media (min-width: 1160px) {\n    display: flex;\n    justify-content: space-between;\n    margin-left: 12px;\n  }\n"])));
 var TopMenu = function () {
     var _a = react_1.useState(true), backgroundwhite = _a[0], setBackgroundWhite = _a[1];
-    var _b = react_1.useState(false), isPrivateOfficeHovered = _b[0], setPrivateOfficeHovered = _b[1];
-    var _c = react_1.useState(false), isHamburgerHovered = _c[0], setHamburgerHovered = _c[1];
+    var _b = react_1.useState(false), isAdminLoginVisible = _b[0], setAdminLoginVisible = _b[1];
+    var _c = react_1.useState(false), isPrivateOfficeHovered = _c[0], setPrivateOfficeHovered = _c[1];
+    var _d = react_1.useState(false), isHamburgerHovered = _d[0], setHamburgerHovered = _d[1];
+    var _e = react_1.useState(false), isMenuMobilVisible = _e[0], setMenuMobilVisible = _e[1];
+    var _f = react_1.useState(false), isLoginFormVisible = _f[0], setLoginFormVisible = _f[1];
     var navigate = react_router_dom_1.useNavigate();
     var pathname = react_router_dom_1.useLocation().pathname;
     // console.log(pathname);
@@ -47,13 +52,36 @@ var TopMenu = function () {
         }
     }, [pathname, setBackgroundWhite]);
     var openLoginForm = function () {
-        console.log("LoginForm");
+        setLoginFormVisible(function (prev) { return !prev; });
+        if (isLoginFormVisible) {
+            document.body.style.overflow = "";
+        }
+        else {
+            document.body.style.overflow = "hidden";
+        }
+    };
+    var closeLoginForm = function () {
+        setLoginFormVisible(function (prev) { return !prev; });
+        if (isLoginFormVisible) {
+            document.body.style.overflow = "";
+        }
+        else {
+            document.body.style.overflow = "hidden";
+        }
     };
     var openMenuMobil = function () {
-        console.log("openMenuMobil");
+        setMenuMobilVisible(true);
+        document.body.style.overflow = "hidden";
+    };
+    var closeMenuMobil = function () {
+        setMenuMobilVisible(false);
+        document.body.style.overflow = "";
     };
     var openAdminLogin = function () {
-        console.log("AdminLogin");
+        setAdminLoginVisible(!isAdminLoginVisible);
+    };
+    var closeAdminLogin = function () {
+        setAdminLoginVisible(false);
     };
     return (react_1["default"].createElement(styles_1.Header, { backgroundwhite: backgroundwhite },
         react_1["default"].createElement(styles_1.Container, null,
@@ -70,7 +98,9 @@ var TopMenu = function () {
                         react_1["default"].createElement(styles_1.AdminLogin, { onClick: openAdminLogin, backgroundwhite: backgroundwhite }, "\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440"))),
                 react_1["default"].createElement(styles_1.PrivateOffice, { onMouseOver: function () { return setPrivateOfficeHovered(true); }, onMouseOut: function () { return setPrivateOfficeHovered(false); }, onClick: openLoginForm },
                     react_1["default"].createElement(TripleIcon_1["default"], { icon: "User", light: !backgroundwhite, hovered: isPrivateOfficeHovered }),
-                    react_1["default"].createElement(styles_1.PersonalArea, { backgroundwhite: backgroundwhite }, "\u041B\u0438\u0447\u043D\u044B\u0439 \u043A\u0430\u0431\u0438\u043D\u0435\u0442"))))));
+                    react_1["default"].createElement(styles_1.PersonalArea, { backgroundwhite: backgroundwhite }, "\u041B\u0438\u0447\u043D\u044B\u0439 \u043A\u0430\u0431\u0438\u043D\u0435\u0442")))),
+        react_1["default"].createElement(LoginForm_1["default"], { isVisible: isLoginFormVisible, closeLoginForm: closeLoginForm }),
+        react_1["default"].createElement(MenuMobil_1["default"], { isVisible: isMenuMobilVisible, closeMenuMobil: closeMenuMobil })));
 };
 exports["default"] = TopMenu;
 var templateObject_1;
