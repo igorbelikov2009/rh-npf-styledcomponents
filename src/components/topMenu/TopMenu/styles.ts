@@ -86,7 +86,7 @@ export const ContactsPhone = styled.a<{ backgroundwhite: boolean }>`
   }
 `;
 
-export const AdminLogin = styled.button<{ backgroundwhite: boolean }>`
+export const StyledAdminLogin = styled.button<{ backgroundwhite: boolean }>`
   cursor: pointer;
   position: absolute;
   top: 24px;

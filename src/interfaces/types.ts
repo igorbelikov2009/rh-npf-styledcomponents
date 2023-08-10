@@ -235,3 +235,7 @@ export interface LoginFormProps {
   closeLoginForm: () => void;
   isVisible: boolean;
 }
+
+export interface AdminLoginProps {
+  closeAdminLogin: () => void;
+}

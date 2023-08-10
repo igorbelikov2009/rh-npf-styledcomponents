@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import MainPage from "../pages/MainPage/MainPage";
 import AboutFund from "../pages/AboutFundPage/AboutFundPage";
-import Business from "../pages/BusinessPage/BusinessPage";
+import Business from "../pages/BusinessPage";
 import Contact from "../pages/ContactPage/ContactPage";
 import Info from "../pages/InfoDisclosurePage/InfoDisclosurePage";
 import Investment from "../pages/InvestmentPage";

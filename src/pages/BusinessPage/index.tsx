@@ -6,6 +6,7 @@ import BusinessProgramm from "../../components/business/BusinessProgramm";
 import BusinnesImages from "../../components/business/BusinnesImages";
 import BusinnesStatistic from "../../components/business/BusinnesStatistic";
 import TaxPreferences from "../../components/business/TaxPreferences";
+import BusinnesForm from "../../components/business/BusinnesForm";
 
 const BusinessPage = () => {
   return (
@@ -22,6 +23,7 @@ const BusinessPage = () => {
         <BusinnesImages />
         <BusinnesStatistic />
         <TaxPreferences />
+        <BusinnesForm />
       </div>
     </>
   );

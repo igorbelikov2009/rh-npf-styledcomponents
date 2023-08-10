@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { motion, AnimatePresence } from "framer-motion"; // анимация
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import {
@@ -11,7 +12,7 @@ import {
   PersonalArea,
   ContactsContainer,
   ContactsPhone,
-  AdminLogin,
+  StyledAdminLogin,
   HamburgerContainer,
 } from "./styles";
 import TripleIcon from "../../areCommon/icons/TripleIcon";
@@ -21,6 +22,7 @@ import { MenuLinkProps } from "../../../interfaces/types";
 import MenuLink from "../../ui/links/MenuLink";
 import MenuMobil from "../MenuMobil";
 import LoginForm from "../LoginForm";
+import AdminLogin from "../AdminLogin";
 
 export const Nav = styled.div`
   display: none;
@@ -139,9 +141,9 @@ const TopMenu: FC = () => {
                 8 800 200-47-66
               </ContactsPhone>
 
-              <AdminLogin onClick={openAdminLogin} backgroundwhite={backgroundwhite}>
+              <StyledAdminLogin onClick={openAdminLogin} backgroundwhite={backgroundwhite}>
                 администратор
-              </AdminLogin>
+              </StyledAdminLogin>
             </ContactsContainer>
           </Contacts>
 
@@ -159,6 +161,19 @@ const TopMenu: FC = () => {
 
       <LoginForm isVisible={isLoginFormVisible} closeLoginForm={closeLoginForm} />
       <MenuMobil isVisible={isMenuMobilVisible} closeMenuMobil={closeMenuMobil} />
+
+      <AnimatePresence>
+        {isAdminLoginVisible && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            style={{ overflow: "hidden" }}
+          >
+            <AdminLogin closeAdminLogin={closeAdminLogin} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Header>
   );
 };
