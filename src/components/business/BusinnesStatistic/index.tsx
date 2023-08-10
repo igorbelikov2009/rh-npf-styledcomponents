@@ -16,7 +16,7 @@ const BusinnesStatistic = () => {
 
       <Container>
         {cardsBusinnesStatistic.map((card, index) => (
-          <Card>
+          <Card key={index}>
             <IconContainer>
               <DarkIcon icon={card.icon} />
             </IconContainer>

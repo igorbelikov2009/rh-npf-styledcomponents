@@ -15,7 +15,7 @@ import {
   StyledCalculator,
   Subheading,
 } from "./styles";
-import Checkbox from "../../../ui/Checkbox/Checkbox";
+import Checkbox from "../../../ui/Checkbox";
 import DownPaymentSlider from "../sliders/DownPaymentSlider";
 import MonthlyInstallmenSlider from "../sliders/MonthlyInstallmenSlider";
 import PeriodPaymentPensionSlider from "../sliders/PeriodPaymentPensionSlider";

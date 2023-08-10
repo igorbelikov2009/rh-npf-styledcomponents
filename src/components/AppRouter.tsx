@@ -11,7 +11,7 @@ import Management from "../pages/ManagementPage/ManagementPage";
 import News from "../pages/News/News";
 import NewsPage from "../pages/NewsPage/NewsPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import ServiceSupport from "../pages/ServiceSupportPage/ServiceSupportPage";
+import ServiceSupport from "../pages/ServiceSupportPage";
 import Taxation from "../pages/TaxationPage/TaxationPage";
 import AdminPanel from "../pages/AdminPanel/AdminPanel";
 

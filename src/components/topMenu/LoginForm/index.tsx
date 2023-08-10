@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LoginFormProps } from "../../../interfaces/types";
 import InputSubmit from "../../ui/inputs/InputSubmit";
-import Checkbox from "../../ui/Checkbox/Checkbox";
+import Checkbox from "../../ui/Checkbox";
 import {
   ButtonContainer,
   CheckboxContainer,
