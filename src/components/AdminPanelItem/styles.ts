@@ -44,6 +44,7 @@ export const Paragraph = styled.p`
   margin-left: 32px;
 `;
 export const ContainerButton = styled.div`
+  width: 136px;
   margin-top: 24px;
   display: flex;
   justify-content: flex-end;

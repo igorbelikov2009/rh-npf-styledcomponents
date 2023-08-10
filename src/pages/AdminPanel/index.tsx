@@ -9,6 +9,8 @@ import { Container, GUIContainer, Heading, StyledAdminPanel } from "./styles";
 import { IInfo, INews } from "../../interfaces/types";
 import useDate from "../../api/useDate/useDate";
 import MyModal from "../../components/MyModal";
+import ServerIsLoading from "../../components/areCommon/ServerIsLoading";
+import ServerError from "../../components/areCommon/ServerError";
 
 export const StyledFormControl = styled(Form.Control)`
   margin-bottom: 12px;
@@ -124,10 +126,10 @@ const AdminPanel = () => {
   };
   return (
     <StyledAdminPanel>
-      {/* <>
+      <>
         {(isLoading || isLoadingAdding) && <ServerIsLoading />}
         {error && <ServerError />}
-      </> */}
+      </>
 
       <Container>
         <GUIContainer>
