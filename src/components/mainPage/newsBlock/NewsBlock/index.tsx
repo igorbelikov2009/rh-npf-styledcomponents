@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, ScrollableElement } from "./styles";
-import { news } from "../../../../data/newsData";
+// import { news } from "../../../../data/newsData";
 import { INews } from "../../../../interfaces/types";
 import useDate from "../../../../api/useDate/useDate";
 import CarouselHeader from "../../../areCommon/carousel/CarouselHeader";
 import MainCarousel from "../MainCarousel";
+import { newsAPI } from "../../../../store/services/newsAPI";
+import ServerIsLoading from "../../../areCommon/ServerIsLoading";
+import ServerError from "../../../areCommon/ServerError";
 
 const NewsBlock = () => {
   // для CarouselHeader
@@ -28,13 +31,14 @@ const NewsBlock = () => {
   //  columns[q] и columns[j]
 
   // // ===================================================================================
-  // // Получаем данные с newsReducer,
-  // const dispatch = useAppDispatch();
-  // const { news, isLoading, error } = useAppSelector((state) => state.newsReducer);
+  // // Получаем данные с newsAPI
 
-  // useEffect(() => {
-  //   dispatch(getNews());
-  // }, [dispatch]);
+  const { data, isLoading, isError } = newsAPI.useGetNewsQuery();
+
+  let news: INews[] = [];
+  if (data) {
+    news = data;
+  }
 
   // Сортируем полученные данные:
   const sortedNews = [...news].sort((a, b) => (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1));
@@ -59,7 +63,7 @@ const NewsBlock = () => {
     setAmountChildren(news.length);
     // высчитываем общую длину карусельной ленты (carousel-tape)
     setOverallWidth(widthLink * amountChildren);
-  }, [amountChildren, widthLink]);
+  }, [amountChildren, news.length, widthLink]);
   // console.log("amountChildren :" + amountChildren);
   // console.log("overallWidth:" + overallWidth);
   // =================================
@@ -163,6 +167,9 @@ const NewsBlock = () => {
 
   return (
     <>
+      {isLoading && <ServerIsLoading />}
+      {isError && <ServerError />}
+
       <CarouselHeader
         headerTitle="Новости"
         isBlurredLeft={isBlurredLeft}

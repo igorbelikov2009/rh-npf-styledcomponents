@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo, useState } from "react";
 import {
   Adress,
@@ -11,12 +12,15 @@ import {
   Selector,
   StyledListNews,
 } from "./styles";
-import { news } from "../../../data/newsData";
+
 import { INews } from "../../../interfaces/types";
 import useDate from "../../../api/useDate/useDate";
 import SelectorAndOptionBlock from "../../ui/select/SelectorAndOptionBlock";
 import AdaptiveRadio from "../../ui/radios/AdaptiveRadio";
 import NewsLink from "../NewsLink";
+import { newsAPI } from "../../../store/services/newsAPI";
+import ServerIsLoading from "../../areCommon/ServerIsLoading";
+import ServerError from "../../areCommon/ServerError";
 
 const ListNews = () => {
   const [selectedYear, setSelectedYear] = useState("2021");
@@ -24,6 +28,12 @@ const ListNews = () => {
   const [isVisible, setRadioListVisible] = useState(false);
 
   // Из полученных данных создаём radioYears (optionsItems)
+  const { data, isLoading, isError } = newsAPI.useGetNewsQuery();
+  let news: INews[] = [];
+  if (data) {
+    news = data;
+  }
+
   const optionsItems = [...news]
     // Создаём массив из дат новостей, предварительно форматируя их в года
     .map((item) => new Date(item.date).getFullYear())
@@ -43,7 +53,7 @@ const ListNews = () => {
     return [...news].filter((item) => {
       return new Date(item.date).getFullYear() === Number(selectedYear);
     });
-  }, [selectedYear]);
+  }, [news, selectedYear]);
 
   // форматируем дату у новостей, отфильтрованных по годам
   const formatedFilteredByYear: INews[] = useMemo(() => {
@@ -72,6 +82,9 @@ const ListNews = () => {
 
   return (
     <StyledListNews>
+      {isLoading && <ServerIsLoading />}
+      {isError && <ServerError />}
+
       <SelectRadioContainer>
         <Selector>
           <SelectorAndOptionBlock

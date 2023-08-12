@@ -1,11 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newsReducer from "./reducers/newsReducer";
 import { newsAPI } from "./services/newsAPI";
+import { aboutFundAPI } from "./services/aboutFundAPI";
+import { aboutFundCardsAPI } from "./services/aboutFundCardsAPI";
 
 // Создаём корневой редюсер, состоящий из комбинации всех редюсеров
 const rootReducer = combineReducers({
   newsReducer,
   [newsAPI.reducerPath]: newsAPI.reducer,
+  [aboutFundAPI.reducerPath]: aboutFundAPI.reducer,
+  [aboutFundCardsAPI.reducerPath]: aboutFundCardsAPI.reducer,
 });
 
 // Создаём функцию setupStore, с помощью её мы будем конфигурировать
@@ -16,7 +20,11 @@ export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
 
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(newsAPI.middleware),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware()
+        .concat(newsAPI.middleware)
+        .concat(aboutFundAPI.middleware)
+        .concat(aboutFundCardsAPI.middleware),
   });
 };
 

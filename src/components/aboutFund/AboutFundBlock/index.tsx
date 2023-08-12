@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FundCarousel from "../FundCarousel";
-import { aboutFundColumns } from "../../../data/aboutFundData";
 import { Carousel, ScrollableElement, StyledAboutFundBlock } from "./styles";
 import CarouselHeader from "../../areCommon/carousel/CarouselHeader";
+import { aboutFundAPI } from "../../../store/services/aboutFundAPI";
+import ServerIsLoading from "../../areCommon/ServerIsLoading";
+import ServerError from "../../areCommon/ServerError";
 
 const AboutFundBlock = () => {
   const [isHoveredLeft, setIsHoveredLeft] = useState(false);
@@ -29,13 +31,15 @@ const AboutFundBlock = () => {
   };
   // console.log(widthLink);
 
+  const { data: aboutFundColumns, isLoading, isError } = aboutFundAPI.useGetAboutFundColumnsQuery(10);
+
   useEffect(() => {
     if (aboutFundColumns)
       // получаем количество детей массива, новостных колонок (NewsLinkContainer)
       setAmountChildren(aboutFundColumns.length);
     // высчитываем общую длину карусельной ленты (carousel-tape)
     setOverallWidth(widthLink * amountChildren);
-  }, [amountChildren, widthLink]);
+  }, [aboutFundColumns, amountChildren, widthLink]);
   // console.log("amountChildren :" + amountChildren);
   // console.log("overallWidth:" + overallWidth);
   // =================================
@@ -143,6 +147,9 @@ const AboutFundBlock = () => {
 
   return (
     <StyledAboutFundBlock>
+      {isLoading && <ServerIsLoading />}
+      {isError && <ServerError />}
+
       <CarouselHeader
         headerTitle="История Фонда"
         isBlurredLeft={isBlurredLeft}

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-
 import TripleIcon from "../../components/areCommon/icons/TripleIcon";
 import { Container, IconContainer, LinkTitle, StyledLink, StyledNewsPage } from "./styles";
 import { useParams } from "react-router-dom";
-import { news } from "../../data/newsData";
 import { INews } from "../../interfaces/types";
 import useDate from "../../api/useDate/useDate";
 import Article from "../../components/newsPage/Article";
 import NewsLink from "../../components/news/NewsLink";
+import { newsAPI } from "../../store/services/newsAPI";
+import ServerIsLoading from "../../components/areCommon/ServerIsLoading";
+import ServerError from "../../components/areCommon/ServerError";
 
 const NewsPage = () => {
   const { id } = useParams();
@@ -16,12 +17,13 @@ const NewsPage = () => {
   const [isHovered, setHovered] = useState(false);
 
   // // Получаем данные с newsReducer,
-  // const dispatch = useAppDispatch();
-  // const { news, isLoading, error } = useAppSelector((state) => state.newsReducer);
+  const { data, isLoading, isError } = newsAPI.useGetNewsQuery();
+  let news: INews[] = [];
+  if (data) {
+    news = data;
+  }
 
-  // useEffect(() => {
-  //   dispatch(getNews());
-  // }, [dispatch]);
+  // const { news, isLoading, error } =
 
   // Фильтруем массив всех отсортированных новостей, с упорядоченным id, с отформатированной датой
   // Оставляем в массиве только те новости, ID которых соответствуют prevID и nextID.
@@ -60,6 +62,9 @@ const NewsPage = () => {
 
           <LinkTitle>К списку новостей</LinkTitle>
         </StyledLink>
+
+        {isLoading && <ServerIsLoading />}
+        {isError && <ServerError />}
 
         <>
           {formatedCurrentNews ? (

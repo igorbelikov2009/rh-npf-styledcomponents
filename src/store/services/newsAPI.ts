@@ -8,13 +8,14 @@ export const newsAPI = createApi({
   }),
   tagTypes: ["News"],
   endpoints: (build) => ({
-    fetchNews: build.query<INews[], void>({
+    getNews: build.query<INews[], void>({
       query: () => ({
         url: "/news",
       }),
       providesTags: (result) => ["News"], // указываем, что эндпоинт fetchNews
       // работает с тэгом ["News"]
     }),
+
     addNews: build.mutation({
       query: (body: INews) => ({
         url: "/news",
@@ -25,6 +26,7 @@ export const newsAPI = createApi({
       // помощи этого тэга и происходит автоматическое обновление браузера
       // при выполнении мутации.
     }),
+
     deleteNews: build.mutation({
       query: (id) => ({
         url: `news/${id}`,
@@ -37,5 +39,5 @@ export const newsAPI = createApi({
   }),
 });
 
-export const { useFetchNewsQuery, useAddNewsMutation, useDeleteNewsMutation } = newsAPI;
+// export const { useFetchNewsQuery, useAddNewsMutation, useDeleteNewsMutation } = newsAPI;
 //  регистрируем в store/store.ts

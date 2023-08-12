@@ -4,9 +4,11 @@ import TopBlock from "../../components/areCommon/TopBlock";
 import AboutUs from "../../components/aboutFund/AboutUs";
 import AboutFundBlock from "../../components/aboutFund/AboutFundBlock";
 import Cards from "../../components/areCommon/cards/Cards";
-import { aboutFundCards } from "../../data/aboutFundData";
+import { aboutFundCardsAPI } from "../../store/services/aboutFundCardsAPI";
 
 const AboutFundPage = () => {
+  const { data: aboutFundCards } = aboutFundCardsAPI.useGetAboutFundCardsQuery(10);
+
   return (
     <>
       <TopBlock
@@ -17,7 +19,7 @@ const AboutFundPage = () => {
 
       <AboutUs />
       <AboutFundBlock />
-      <Cards cards={aboutFundCards} />
+      {aboutFundCards && <Cards cards={aboutFundCards} />}
     </>
   );
 };

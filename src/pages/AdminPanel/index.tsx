@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"; // анимация
 import React, { FC, useState, useEffect, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import NewsItem from "../../components/AdminPanelItem";
-import { useAddNewsMutation, useDeleteNewsMutation, useFetchNewsQuery } from "../../store/services/newsAPI";
+// import { useAddNewsMutation, useDeleteNewsMutation, useFetchNewsQuery } from "../../store/services/newsAPI";
 import { styled } from "styled-components";
 import { Container, GUIContainer, Heading, StyledAdminPanel } from "./styles";
 import { IInfo, INews } from "../../interfaces/types";
@@ -11,6 +11,7 @@ import useDate from "../../api/useDate/useDate";
 import MyModal from "../../components/MyModal";
 import ServerIsLoading from "../../components/areCommon/ServerIsLoading";
 import ServerError from "../../components/areCommon/ServerError";
+import { newsAPI } from "../../store/services/newsAPI";
 
 export const StyledFormControl = styled(Form.Control)`
   margin-bottom: 12px;
@@ -30,7 +31,7 @@ export const Paragraph = styled.h4`
 const AdminPanel = () => {
   const [isBackgroundWhite, setBackgroundWhite] = useState(true);
 
-  const { data, isLoading, error } = useFetchNewsQuery();
+  const { data, isLoading, error } = newsAPI.useGetNewsQuery();
   let news: INews[] = [];
   if (data) {
     news = data;
@@ -52,7 +53,7 @@ const AdminPanel = () => {
   // Создание, добавление =======================================================
   // Для создания нового объекта (newsItem) достаём сгенерированный в newsAPI
   //               хук useAddNewsMutation()
-  const [addNews, { isLoading: isLoadingAdding }] = useAddNewsMutation();
+  const [addNews, { isLoading: isLoadingAdding }] = newsAPI.useAddNewsMutation();
 
   // title, date, paragraphs для создания нового объекта (newsItem)
   const [title, setTitle] = useState("");
@@ -120,7 +121,7 @@ const AdminPanel = () => {
   }, [modal, setBackgroundWhite]);
 
   // // Для удаления достаём сгенерированный в newsAPI хук useDeleteNewsMutation
-  const [deleteNews, { isLoading: isLoadingDelete }] = useDeleteNewsMutation();
+  const [deleteNews, { isLoading: isLoadingDelete }] = newsAPI.useDeleteNewsMutation();
   const handleDeleteNews = async (id: number) => {
     await deleteNews(id).unwrap();
   };
